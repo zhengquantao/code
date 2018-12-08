@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>数量</th>
+            <th>日期</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in num_list %}
+        <tr>
+            <td>{{i.id}} </td>
+            <td>{{i.number}}</td>
+            <td>{{i.ctime}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<nav aria-label="Page navigation Page-center">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}

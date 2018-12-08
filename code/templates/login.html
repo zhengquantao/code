@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登入</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-theme.min.css">
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .row{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <form action="" method="post">
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                    <label for="inputEmail3" class=" control-label">账号</label>
+                    <input type="text" id="inputEmail3" class="form-control" name="username" placeholder="用户名">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                    <label for="inputPassword3" class="control-label">密码</label>
+                    <input type="password" id="inputPassword3" class="form-control" name="password" placeholder="Password">
+                    <p><span style="color:red">{{msg}}</span></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> 记住密码
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                    <button type="submit" id="info" class="btn btn-info">登录</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/jquery-3.3.1.js"></script>
+<script>
+    $("#info").click(function(){
+        var username= $("#inputEmail3").val();
+        var password= $("#inputPassword3").val();
+        console.log(username, password);
+        if (username=="" || password==""){
+            $(".errorE").text("用户名密码错误");
+        }
+        console.log(username, password);
+        // $.ajax({
+        //     url:'/login',
+        //     type:'post',
+        //     data:{
+        //         "username":username,
+        //         "password":password,
+        //     },
+        //     success:function(data){
+        //         console.log(data);
+        //         if(data){
+        //             $("#error").text(data.msg);
+        //         }else{
+        //             location.href = ('/home')
+        //         }
+        //     }
+        // })
+    })
+</script>
+
+</body>
+</html>

@@ -37,7 +37,7 @@ def upload():
                     file_num += 1
             total_num += file_name
     import datetime
-    ctime = datetime.date.today()
+    ctime = datetime.date.today()  # 获取今天时间
     mes = helper.fetch_one('select * from Ncode where ctime=%s and user_id=%s', (ctime, session['user_info']['id']))
     if mes:
         return '震惊，今天已经上传过了'
